@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+# $Date$
+# $Id$
+# $Version: 0.1$
+# $Revision: 1$
+# $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
+################################################################################
+class Array
+  def apply(a)
+    a.each_index do |i|
+      c = ""
+      printf("v[%d] =", i);
+      a[i].each_index { |j|
+        # p a[i][j]*self[j]
+        printf("%s a[%d][%d]*v[%d] = %8p*%-8p", c, i, j, i, a[j][i], self[i]);
+        c = "     +   "
+        self[i] += self[i]*a[i][j]
+      }
+      puts
+    end
+  end
+end
+a = [[0, -1 ], [1, 0]]
+a.each_index do |i|
+  a[i].each_index { |j|
+    printf("a[%d][%d] = %8p", i, j, a[i][j]);
+  }
+  puts
+end
+puts
+v = [1, 0]
+p v
+v.apply(a)
+p v
+puts
+w = [0, 1]
+p w
+w.apply(a)
+p w
+__END__
+################################################################################
+# vim: syntax=ruby:fileencoding=utf-8:fileformat=unix:tw=78:ts=2:sw=2:sts=2:et
+# EOF
