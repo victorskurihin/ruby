@@ -21,6 +21,26 @@
 # CC(a - 2*b, b) = C(a - 2*b, b + a - 2*b - 1)
 # C(a - 2*b, a - b - 1)= binomial(a - b - 1, a - 2*b)
 
+class Xs                # represent a string of 'x's
+  include Comparable
+  attr :length
+  def initialize(n)
+    @length = n
+  end
+  def succ
+    Xs.new(@length + 1)
+  end
+  def <=>(other)
+    @length <=> other.length
+  end
+  def to_s
+    sprintf "%2d #{inspect}", @length
+  end
+  def inspect
+    'x' * @length
+  end
+end
+
 class Integer
   def fact
     (1..self).reduce(:*) || 1
@@ -45,8 +65,24 @@ def CC(k ,n)
   C(k, n+k-1)
 end
 
-p 9*10**9-9*9.fact
-
+i = 0
+k = 5
+b = 10**(k-1)
+e = 10**k-1
+printf("b                             = %d\n", b)
+printf("e                             = %d\n", e)
+printf("k                             = %d\n", k)
+printf("10**(k-1)                     = %d\n", 10**(k-1))
+printf("10**(k-1)-9**(k-1)            = %d\n", 10**(k-1)-9**(k-1))
+printf("10**k-9**k                    = %d\n", 10**k-9**k)
+printf("10**k-9**k-(10**(k-1)-9**(k-1)) = %d\n", 10**k-9**k-(10**(k-1)-9**(k-1)))
+r = Range.new(b, e)
+r.each { |n|
+  if n.to_s =~ /7/
+    i += 1
+  end
+}
+p i
 __END__
 ################################################################################
 # vim: syntax=ruby:fileencoding=utf-8:fileformat=unix:tw=78:ts=2:sw=2:sts=2:et
