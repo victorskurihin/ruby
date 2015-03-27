@@ -4,9 +4,10 @@
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 1$
+# $Revision: 2$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
+
 v = [3, 3]
 def v.apply(a)
   a.each_index do |i|
@@ -29,6 +30,7 @@ a.each_index do |i|
 end
 puts
 v.apply(a)
+
 __END__
 ################################################################################
 # vim: syntax=ruby:fileencoding=utf-8:fileformat=unix:tw=78:ts=2:sw=2:sts=2:et

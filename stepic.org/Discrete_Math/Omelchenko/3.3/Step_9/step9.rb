@@ -4,7 +4,7 @@
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 1$
+# $Revision: 2$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 # Пусть А = {1,2,3,4,5,6,7}, В = {4,5,6,7,8,9,10}, С = {2,4,6,8,10},
@@ -193,4 +193,8 @@ i = 0
   end
 end
 printf("i = %d\n", i)
+
 __END__
+################################################################################
+# vim: syntax=ruby:fileencoding=utf-8:fileformat=unix:tw=78:ts=2:sw=2:sts=2:et
+# EOF

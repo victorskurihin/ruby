@@ -4,7 +4,7 @@
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 1$
+# $Revision: 2$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 #
@@ -32,4 +32,8 @@ while i < n
   puts
   i += 1
 end
+
 __END__
+################################################################################
+# vim: syntax=ruby:fileencoding=utf-8:fileformat=unix:tw=78:ts=2:sw=2:sts=2:et
+# EOF

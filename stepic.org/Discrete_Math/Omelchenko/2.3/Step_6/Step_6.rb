@@ -4,12 +4,13 @@
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 2$
+# $Revision: 3$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 # Найдите матрицу оператора проекции на линию, проходящую через точку (3, 1)
 # и начало координат.
 ################################################################################
+
 class Numeric
   def degrees
     self * Math::PI / 180
@@ -97,6 +98,7 @@ printf("Orthogonally project the vector e1 onto vector b0: %p\n", b0.multoscalar
 e2 = [Rational(0,1), Rational(1,1)]
 scalar = scalar_product(e2, b0)/scalar_product(b0, b0)
 printf("Orthogonally project the vector e2 onto vector b0: %p\n", b0.multoscalar(scalar))
+
 __END__
 ################################################################################
 # vim: syntax=ruby:fileencoding=utf-8:fileformat=unix:tw=78:ts=2:sw=2:sts=2:et
