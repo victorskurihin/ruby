@@ -7,17 +7,19 @@
 # $Revision: 1$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
-
-class Integer
-  def fact
-    (1..self).reduce(:*) || 1
+#
+count = 0
+b = 100000
+e = 999999
+r = Range.new(b, e)
+r.each do |n|
+  sum = 0
+  n.to_s.each_char { |nn|
+    sum += nn.to_i
+  }
+  if sum <= 47
+    count += 1
   end
 end
-
-def C(k ,n)
-  n.fact/(k.fact*(n-k).fact)
-end
-
-def CC(k ,n)
-  C(k, n+k-1)
-end
+puts count
+__END__
