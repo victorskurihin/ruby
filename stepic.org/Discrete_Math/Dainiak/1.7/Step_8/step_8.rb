@@ -1,4 +1,12 @@
 #!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+################################################################################
+# $Date$
+# $Id$
+# $Version: 0.1$
+# $Revision: 3$
+# $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
+################################################################################
 
 class Integer
   def fact

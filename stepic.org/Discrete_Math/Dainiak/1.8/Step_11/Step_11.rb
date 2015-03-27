@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+################################################################################
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 4$
+# $Revision: 7$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 # http://www.problems.ru/view_problem_details_new.php?id=60343
