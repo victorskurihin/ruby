@@ -4,7 +4,7 @@
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 2$
+# $Revision: 3$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 
@@ -67,7 +67,34 @@ def PK(n, *k)
   n.fact/pp
 end
 
-p PK(10, 1, 1, 1, 2, 2, 3)
+def PKf(n, *k)
+  return nil if n < 0
+  pp = 1
+  k.each {|e| pp = pp*e.fact }
+  n.fact.to_f/pp.to_f
+end
+
+def fib(n)
+  f = Math.sqrt(5)
+  t = 2.to_f
+  r = (1.0/f)*((1 + f)/t)**n - (1.0/f)*((1 - f)/t)**n
+  if n.kind_of? Fixnum and n.abs < 1474
+    return r.round.to_i
+  else
+    return r
+  end
+end
+
+def luc(n)
+  f = Math.sqrt(5)
+  t = 2.to_f
+  r = ((1 + f)/t)**n + ((1 - f)/t)**n
+  if n.kind_of? Fixnum and n.abs < 1474
+    return r.round.to_i
+  else
+    return r
+  end
+end
 
 __END__
 ################################################################################
