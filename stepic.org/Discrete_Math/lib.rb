@@ -4,7 +4,7 @@
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 3$
+# $Revision: 4$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 
@@ -14,6 +14,14 @@ class Integer
   end
   alias factorial fact
 end
+
+class Float
+  def fact
+    Math.sqrt(2*Math::PI*self)*(self/Math::E)**self
+  end
+  alias factorial fact
+end
+# extremum 170.6.fact
 
 # убывающая факториальная степень P(k, n) = (n)k = n∙(n-1)∙...∙(n-k+1)
 # P(k, n) = A(k, n)
