@@ -4,9 +4,12 @@
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 8$
+# $Revision: 5$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
+# Из колоды в 36 карт выбирается наугад четвёрка карт. С какой вероятностью
+# выбранные карты окажутся разномастными?
+
 
 class Integer
   def fact
@@ -20,12 +23,6 @@ class Float
     Math.sqrt(2*Math::PI*self)*(self/Math::E)**self
   end
   alias factorial fact
-  def to_rad
-    self*Math::PI/180
-  end
-  def to_gradus
-    (self*180).to_f/Math::PI
-  end
 end
 # extremum 170.6.fact
 
@@ -110,25 +107,13 @@ def luc(n)
   end
 end
 
-A=1.3063778838630806904686144926026057129167845851567136443680537599664340537668
-
-
-def mills_prime_repr_func(k)
-  (A**(3**k)).floor
-end
-alias prime mills_prime_repr_func
-
-def mersenne_numbers(n)
-  2**n-1
-end
-
-# равенство по модулю
-# «числа a и b равны по модулю m», если остаток при делении a на m равен
-# остатку при делении b на m, то есть, если
-# a mod m =b mod m.
-def mod_eql(a, b, m)
-  (a % m) == (b % m)
-end
+# |X| = 36, |Xdiamonds| = 9, |Xhearts| = 9, |Xspades| = 9, |Xbaptize| = 9
+# X0 = {x[i], x[j], x[k], x[l]} : x[i] in {Xdiamonds}, x[j] in {Xhearts}, x[k] in {Xspades}, x[l] in {Xbaptize}
+# n = C(4, |X|) = C(4, 36)
+# m0 = C(1, |Xdiamonds|) * C(1, |Xhearts|) * C(1, |Xspades|) * C(1, |Xbaptize|)
+# n = C(4, |X|) = C(4, 36)
+px0 = (C(1,9)*C(1,9)*C(1,9)*C(1,9).to_f/C(4,36)).round(3)
+printf("P(X0) = C(1,9)*C(1,9)*C(1,9)*C(1,9)/C(4,36) = %.3f\n", px0)
 
 __END__
 ################################################################################

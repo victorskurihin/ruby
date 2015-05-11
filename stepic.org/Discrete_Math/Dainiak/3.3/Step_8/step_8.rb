@@ -4,7 +4,7 @@
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 7$
+# $Revision: 9$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 
@@ -114,8 +114,10 @@ def gnuplot(commands)
   IO.popen("gnuplot", "w") {|io| io.puts commands}
 end
 
-commands1 =
-%Q(
+file1 = 'step_8_1.txt'
+file3 = 'step_8_3.txt'
+
+commands1 = <<"EOF"
   set terminal png size 1024, 480
   set output "step_8_1.png"
   set style line 1 lt -1 lw 1
@@ -128,9 +130,9 @@ commands1 =
   set key left top vertical Left spacing 1.5
   set grid
   set autoscale fix
-  plot 'step_8.txt' using 1:2                 title " " pt 5, \
-       'step_8.txt' using 1:2 smooth csplines title " " with lines lt -1
-)
+  plot '#{file1}' using 1:2                 title " " pt 5, \
+       '#{file1}' using 1:2 smooth csplines title " " with lines lt -1
+EOF
 
 # plot '-' using 1:2 axes x1y2 title "1" with lines, '-' using 3:4 smooth bezier title "2" lt -1
 commands2 =
@@ -148,13 +150,15 @@ commands3 =
   set style line 1 lt -1 lw 1
   set style line 2 lt -1 lw 2
   set style arrow 2 head filled size screen 0.015,15,20 ls 2
-  set arrow from 17,1 to 17,1.63e-1 as 2
-  set arrow from 17,1 to 20.03,1 as 2
-  set ytics 1, 20
-  set xtics 17, 1
-  set y2range [1:1.6e-2]
+  set arrow from 1,1 to 1,2.43e+0 as 2
+  set arrow from 1,1 to 20.03,1 as 2
+  #set ytics 1, 0.1
+  set xtics 1, 1
+  set y2range [0:2.41e+0]
+  set autoscale fix
   set grid
-  plot '-' using 1:2 axes x1y2 notitle with lines
+  plot '#{file3}' using 1:2                 title " " pt 5, \
+       '#{file3}' using 1:2 smooth csplines title " " with lines lt -1
 )
 command11 = ""
 s = 0.0
@@ -163,17 +167,20 @@ n = 20
 r = Range.new(k, n)
 a = (Math.sqrt(2*Math::PI*n)*n**n)/((Math::E*2)**n)
 # printf("%8e\n", a)
-while r.include? k do
-  e = (k.fact).to_f/(2.0**k)
-  s += e
-  d = s/a
-  #printf("%d %8e %8e %8e\n", k, e, s, d)
-  printf("%d %e %d %e\n", k, s, k, s) if k > 16
-  #commands1 = commands1 + sprintf("%d %e %d %e\n", k, s, k, s) if k > 16
-  #command11 = command11 + sprintf("%d %e %d %e\n", k, s, k, s) if k > 16
-  commands2 = commands2 + sprintf("%d %e\n", k, d) if k > 10
-  k += 1
-end
+File.open(file1, 'w') { |file|
+  while r.include? k do
+    e = (k.fact).to_f/(2.0**k)
+    s += e
+    d = s/a
+    #printf("%d %8e %8e %8e\n", k, e, s, d)
+    printf("%d %e %d %e\n", k, s, k, s) if k > 16
+    commands1 = commands1 + sprintf("%d %e %d %e\n", k, s, k, s) if k > 16
+    #command11 = command11 + sprintf("%d %e %d %e\n", k, s, k, s) if k > 16
+    commands2 = commands2 + sprintf("%d %e\n", k, d) if k > 10
+    k += 1
+  end
+  file.write(commands1) 
+}
 gnuplot(commands1)
 gnuplot(commands2)
 
@@ -182,23 +189,30 @@ n = 20
 r = Range.new(k, n)
 a = (Math.sqrt(2*Math::PI*n)*n**n)/((Math::E*2)**n)
 # printf("%8e\n", a)
-n = 17.0
-while (1.0..20.1).include? n
-  s = 0.0
-  k = 1
-  a = (Math.sqrt(2*Math::PI*n)*n**n)/((Math::E*2.0)**n)
-  while k < n do
-    e = (k.fact).to_f/(2.0**k)
-    s += e
-    k += 1
+n = 1.0
+File.open(file3, 'w') { |file|
+  commands3 = commands3 + sprintf("%.1f %e\n", 1, 1.0)
+  while (1.0..20.1).include? n
+    s = 0.0
+    k = 1
+    a = (Math.sqrt(2*Math::PI*n)*n**n)/((Math::E*2.0)**n)
+    while k < (n+1) do
+      e = (k.fact).to_f/(2.0**k)
+      s += e
+      k += 1
+    end
+    d = s/a
+    printf("%.1f %8e %8e %8e\n", n, s, a, d)
+    commands3 = commands3 + sprintf("%.1f %e\n", n, d)
+    n += 1
   end
-  d = s/a
-  printf("%.1f %8e %8e %8e\n", n, s, a, d)
-  commands3 = commands3 + sprintf("%.1f %e\n", n, d)
-  n += 0.1
-end
+  file.write(commands3) 
+}
 gnuplot(commands3)
 __END__
 ################################################################################
 # vim: syntax=ruby:fileencoding=utf-8:fileformat=unix:tw=78:ts=2:sw=2:sts=2:et
 # EOF
+#
+max 0.5 2.5 4.5
+min 1.5 3.5

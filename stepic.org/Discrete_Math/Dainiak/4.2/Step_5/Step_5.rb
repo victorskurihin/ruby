@@ -4,9 +4,12 @@
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 8$
+# $Revision: 5$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
+# Генератор случайных чисел выдаёт случайную двоичную десятисимвольную
+# последовательность. С какой вероятностью в этой последовательности не
+# окажется двух идущих подряд единиц?
 
 class Integer
   def fact
@@ -20,12 +23,6 @@ class Float
     Math.sqrt(2*Math::PI*self)*(self/Math::E)**self
   end
   alias factorial fact
-  def to_rad
-    self*Math::PI/180
-  end
-  def to_gradus
-    (self*180).to_f/Math::PI
-  end
 end
 # extremum 170.6.fact
 
@@ -110,25 +107,16 @@ def luc(n)
   end
 end
 
-A=1.3063778838630806904686144926026057129167845851567136443680537599664340537668
-
-
-def mills_prime_repr_func(k)
-  (A**(3**k)).floor
+c = 0
+i = 0
+while i <= 0x3FF
+  printf("%010b\n", i)
+  s = sprintf("%010b\n", i)
+  c += 1 if /11/ =~ s
+  i += 1
 end
-alias prime mills_prime_repr_func
-
-def mersenne_numbers(n)
-  2**n-1
-end
-
-# равенство по модулю
-# «числа a и b равны по модулю m», если остаток при делении a на m равен
-# остатку при делении b на m, то есть, если
-# a mod m =b mod m.
-def mod_eql(a, b, m)
-  (a % m) == (b % m)
-end
+p c
+p i
 
 __END__
 ################################################################################

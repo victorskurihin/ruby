@@ -4,7 +4,7 @@
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 8$
+# $Revision: 7$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 
@@ -88,6 +88,8 @@ def PKf(n, *k)
   n.fact.to_f/pp.to_f
 end
 
+# Числа Фибоначчи
+# F[n] = F[n-1] + F[n-2], F[0] = 1, F[1] = 1
 def fib(n)
   f = Math.sqrt(5)
   t = 2.to_f
@@ -99,6 +101,8 @@ def fib(n)
   end
 end
 
+# Числа Люка задаются рекуррентной формулой
+# L[n] = L[n-1] + L[n-2], L[0] = 2, L[1] = 1
 def luc(n)
   f = Math.sqrt(5)
   t = 2.to_f
@@ -111,7 +115,6 @@ def luc(n)
 end
 
 A=1.3063778838630806904686144926026057129167845851567136443680537599664340537668
-
 
 def mills_prime_repr_func(k)
   (A**(3**k)).floor
@@ -129,6 +132,28 @@ end
 def mod_eql(a, b, m)
   (a % m) == (b % m)
 end
+
+a = []
+2.upto(40){|i|a<<i}
+
+b = []
+2.upto(40){|i|b<<i}
+
+m = []
+2.upto(19){|i|m<<i}
+
+p a
+p b
+p m
+
+a.each{|aa|
+  b.each{|bb|
+    m.each{|mm|
+      printf("(%2d mod %2d) == (%2d mod %2d) => %p\n",
+              aa, mm, bb, mm, mod_eql(aa, bb, mm)) if ((aa.to_f / mm) - 0.0).abs < 1e-36
+    }
+  }
+}
 
 __END__
 ################################################################################
