@@ -4,7 +4,7 @@
 # $Date$
 # $Id$
 # $Version: 0.1$
-# $Revision: 2$
+# $Revision: 3$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 # Сколько существует шестизначных чисел, сумма цифр которых не превосходит 47?
@@ -25,7 +25,7 @@ r.each do |i|
   if 7 == str_bit_num.count("1") 
     if not str_bit_num =~ /(11)/
       count += 1
-      printf(f + " count : %d " + "\n", n, count)
+      printf(f + " count : %d " + "\n", i, count)
     end
   end
 end
