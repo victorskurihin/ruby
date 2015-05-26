@@ -1,0 +1,149 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+################################################################################
+# $Date$
+# $Id$
+# $Version: 0.1$
+# $Revision: 1$
+# $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
+################################################################################
+#
+
+class Array
+  def resize(new_size, value = nil)
+    if new_size < length
+      slice!(new_size, length)
+    else
+      fill(value, -1, new_size - length)
+    end
+    self
+  end
+end
+
+class Graph
+  def initialize( en = 0, vn = 0)
+    @en = en
+    @vn = vn
+    # Adjacency matrix
+    @am = Array.new(vn){|i| Array.new(vn, 0)}
+    # Incidence matrix
+    @im = Array.new(vn){|i| Array.new(en, 0)}
+  end
+  def add(a, b, e)
+    new_vn = if a > b then a else b end
+    #printf("add(%d, %d, %d): new_en: %d\n", a,b,e,new_vn)
+    if e > @en
+      #printf("new_en: %d, \@im: %p\n", e, @im)
+      @en = e
+      @im.each {|a| a.resize(@en + 1, 0)}
+      #printf("new_en: %d, \@im: %p\n", @en, @im)
+    end
+    if new_vn >= @vn
+      @vn = new_vn + 1
+      @am.each {|a| a.resize(@vn + 1, 0) }
+      @am.resize(@vn + 1)
+      @im.resize(@vn + 1)
+      @am.each_index do |i|
+        @am[i] = Array.new(@vn, 0) if not @am[i]
+        @im[i] = Array.new(@en, 0) if not @im[i]
+      end
+    end
+    @am[a][b] = 1
+    @am[b][a] = 1
+    #printf("add(%d, %d, %d): am[%d][%d] = 1\n", a, b, e, a, b, @am[a][b])
+    #printf("add(%d, %d, %d): am[%d][%d] = 1\n", a, b, e, b, a, @am[b][a])
+    @im[a][e] = 1
+    @im[b][e] = 1
+    #printf("add(%d, %d, %d): im[%d][%d] = 1\n", a, b, e, a, e, @im[a][e])
+    #printf("add(%d, %d, %d): im[%d][%d] = 1\n", a, b, e, b, e, @im[b][e])
+  end
+  def adj_matrix
+    printf("   ")
+    (1..@am.size).each { |i|
+      printf("%2d ", i)
+    }
+    puts
+    @am.each_index { |i|
+      printf("%2d ", i + 1)
+      @am[i].each do |e|
+        printf("%2d ", e)
+      end
+      puts
+    }
+  end
+  def inc_matrix
+    printf("   ")
+    (1..@im[0].size).each { |i|
+      printf("%2d ", i)
+    }
+    puts
+    @im.each_index { |i|
+      printf("%2d ", i + 1)
+      @im[i].each do |e|
+        printf("%2d ", e)
+      end
+      puts
+    }
+  end
+  def swap_v(from, to)
+    from -= 1
+    to -= 1
+    t = @im[from]
+    @im[from] = @im[to]
+    @im[to] = t
+    @am.each_index { |i|
+      if 1 == @am[from][i]
+        t = @am[to][i]
+        @am[to][i] = @am[from][i]
+        @am[from][i] = t
+      end
+      if 1 == @am[i][from]
+        t = @am[i][to]
+        @am[i][to] = @am[i][from]
+        @am[i][from] = t
+      end
+      if 1 == @am[to][i]
+        t = @am[from][i]
+        @am[from][i] = @am[to][i]
+        @am[to][i] = t
+      end
+      if 1 == @am[i][to]
+        t = @am[i][from]
+        @am[i][from] = @am[i][to]
+        @am[i][to] = t
+      end
+    }
+  end
+end
+
+t = gets.chomp.split(/\s+/)
+n, m = t[0].to_i, t[1].to_i
+g1 = Graph.new(n, m)
+1.upto(n) do |i|
+  t = gets.chomp.split(/\s+/)
+  g1.add(t[0].to_i - 1, t[1].to_i - 1, i - 1)
+end
+g1.adj_matrix
+g1.inc_matrix
+puts
+
+t = gets.chomp.split(/\s+/)
+n, m = t[0].to_i, t[1].to_i
+g2 = Graph.new(n, m)
+1.upto(n) do |i|
+  t = gets.chomp.split(/\s+/)
+  g2.add(t[0].to_i - 1, t[1].to_i - 1, i - 1)
+end
+g2.adj_matrix
+g2.inc_matrix
+puts
+
+#g2.swap_v(2, 4)
+#g2.adj_matrix
+#g2.swap_v(4, 5)
+#g2.inc_matrix
+#g2.adj_matrix
+__END__
+################################################################################
+# vim: syntax=ruby:fileencoding=utf-8:fileformat=unix:tw=78:ts=2:sw=2:sts=2:et
+# EOF

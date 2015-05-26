@@ -1,0 +1,513 @@
+n  = 9
+n! = 362880
+1  Pr(AB) <= max{Pr(A), Pr(B)}  
+2  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  
+3  Pr(A∪B) >= Pr(A)+Pr(B)  
+4  Pr(A∪B) = Pr(A)+Pr(B)  
+5  Pr(AB) >= min{Pr(A), Pr(B)}  
+6  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+7  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+8  Pr(A∪B) <= Pr(A)+Pr(B)  
+9  Pr(AB) <= min{Pr(A), Pr(B)}  
+10  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  
+11  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  
+12  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  
+13  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  
+14  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+15  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+16  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+17  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+18  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  
+19  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  
+20  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  
+21  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+22  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+23  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+24  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+25  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  
+26  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+27  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+28  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+29  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+30  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+31  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+32  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+33  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+34  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+35  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+36  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+37  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+38  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+39  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+40  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+41  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+42  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+43  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+44  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+45  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+46  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  
+47  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  
+48  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  
+49  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+50  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+51  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+52  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+53  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  
+54  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+55  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+56  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+57  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+58  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+59  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+60  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+61  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+62  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+63  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+64  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+65  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+66  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+67  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+68  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+69  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+70  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+71  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+72  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+73  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+74  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  
+75  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+76  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+77  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+78  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+79  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+80  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+81  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+82  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+83  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+84  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+85  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+86  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+87  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+88  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+89  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+90  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+91  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+92  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+93  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+94  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+95  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+96  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+97  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+98  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+99  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+100  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+101  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+102  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+103  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+104  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+105  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+106  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+107  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+108  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+109  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+110  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+111  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+112  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+113  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+114  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+115  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+116  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+117  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+118  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+119  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+120  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+121  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+122  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+123  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+124  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+125  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+126  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+127  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+128  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+129  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+130  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  
+131  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+132  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+133  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+134  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+135  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+136  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+137  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+138  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+139  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+140  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+141  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+142  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+143  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+144  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+145  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+146  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+147  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+148  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+149  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+150  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+151  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+152  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+153  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+154  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+155  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+156  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+157  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+158  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+159  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+160  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+161  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+162  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+163  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+164  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+165  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+166  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+167  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+168  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+169  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+170  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+171  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+172  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+173  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+174  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+175  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+176  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+177  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+178  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+179  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+180  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+181  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+182  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+183  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+184  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+185  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+186  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+187  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+188  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+189  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+190  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+191  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+192  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+193  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+194  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+195  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+196  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+197  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+198  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+199  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+200  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+201  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+202  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+203  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+204  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+205  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+206  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+207  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+208  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+209  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+210  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+211  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+212  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+213  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+214  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+215  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+216  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+217  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+218  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+219  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+220  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+221  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+222  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+223  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+224  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+225  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+226  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+227  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+228  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+229  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+230  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+231  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+232  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+233  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+234  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+235  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+236  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+237  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+238  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+239  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+240  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+241  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+242  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+243  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+244  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+245  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+246  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+247  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+248  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+249  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+250  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+251  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+252  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+253  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+254  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+255  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+256  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  
+257  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+258  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+259  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  
+260  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+261  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+262  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+263  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+264  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+265  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+266  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+267  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+268  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+269  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+270  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+271  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+272  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+273  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+274  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+275  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+276  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+277  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+278  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+279  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+280  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+281  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+282  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+283  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+284  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+285  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+286  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+287  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+288  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+289  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+290  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+291  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+292  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+293  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+294  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+295  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+296  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+297  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+298  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+299  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+300  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+301  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+302  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+303  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+304  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+305  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+306  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+307  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+308  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+309  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+310  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+311  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+312  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+313  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+314  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+315  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+316  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+317  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+318  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+319  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+320  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+321  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+322  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+323  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+324  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+325  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+326  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+327  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+328  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+329  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+330  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+331  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+332  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+333  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+334  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+335  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+336  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+337  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+338  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+339  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+340  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+341  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+342  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+343  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+344  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+345  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+346  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+347  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+348  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+349  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+350  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+351  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+352  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+353  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+354  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+355  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+356  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+357  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+358  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+359  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+360  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+361  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+362  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+363  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+364  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+365  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+366  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+367  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+368  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+369  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+370  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+371  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+372  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+373  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+374  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+375  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+376  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+377  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+378  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+379  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+380  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+381  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+382  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  
+383  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+384  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  
+385  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(AB) <= min{Pr(A), Pr(B)}  
+386  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+387  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+388  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+389  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+390  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+391  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+392  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+393  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+394  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+395  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+396  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+397  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+398  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+399  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+400  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+401  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+402  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+403  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+404  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+405  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+406  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+407  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+408  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+409  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+410  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+411  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+412  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+413  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+414  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+415  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+416  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+417  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+418  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+419  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+420  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+421  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+422  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+423  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+424  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+425  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+426  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+427  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+428  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+429  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+430  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+431  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+432  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+433  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+434  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+435  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+436  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+437  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+438  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+439  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+440  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+441  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+442  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+443  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+444  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+445  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+446  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+447  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+448  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+449  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+450  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+451  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+452  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+453  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+454  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+455  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+456  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+457  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+458  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+459  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+460  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+461  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+462  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+463  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+464  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+465  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+466  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  
+467  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  
+468  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(AB) <= min{Pr(A), Pr(B)}  
+469  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+470  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+471  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+472  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+473  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+474  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+475  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+476  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+477  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+478  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+479  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+480  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+481  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+482  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+483  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+484  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+485  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+486  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+487  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+488  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+489  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+490  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+491  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+492  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+493  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+494  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+495  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+496  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+497  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+498  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+499  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+500  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+501  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+502  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  
+503  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(AB) <= min{Pr(A), Pr(B)}  
+504  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+505  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+506  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+507  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+508  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+509  Pr(AB) <= max{Pr(A), Pr(B)}  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+510  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  
+511  Pr(AB) <= max{Pr(A), Pr(B)}  Если B∩C = 0, то Pr(A∩(B∪C)) <= Pr(AB)+Pr(AC)  Pr(A∪B) >= Pr(A)+Pr(B)  Pr(A∪B) = Pr(A)+Pr(B)  Pr(AB) >= min{Pr(A), Pr(B)}  Pr(A∪B) = Pr(A)+Pr(B)−Pr(AB)  Если B∩C = 0, то Pr(A∩(B∪C))=Pr(AB)+Pr(AC)  Pr(A∪B) <= Pr(A)+Pr(B)  Pr(AB) <= min{Pr(A), Pr(B)}  

@@ -1,0 +1,78 @@
+f13(n) = log(2, n)
+f12(n) = sqrt(n)
+f11(n) = n*log(2, n)
+f10(n) = n*log(2, n)^2
+f9(n) = log(2,(e^(n^2+n)))
+f8(n) = log(2,(e^(n^2)))
+f7(n) = (sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2))) # ~ C(k,n)
+f6(n) = n^2
+f5(n) = 2^n
+f4(n) = (sqrt(2*pi*n)(n/e)^n # ~ n!
+f3(n) = e^(n^2+n)
+f2(n) = e^(n^2)
+f1(n) = 2^(2^n)
+
+2*sqrt()+7:
+==============================
+f(n) = o(g(n)) = f(n)^2 = o(2*sqrt(g(n))+7)
+f(n) ~ g(n) = 2*sqrt(f(n)) + 7 ~ 2*sqrt(g(n)) + 7
+
+
+lim f2(n)/f1(n)
+lim e^(n^2)/2^(2^n) , as n->+inf = 0 = lim (2*sqrt(e^(n^2))+7)/(2*sqrt(2^(2^n))+7) , as n->+inf
+
+lim f7/f6 = lim (sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/n^2, as n->+inf = 1 = lim log(sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/log(n^2), as n->+inf
+
+2*sqrt() + 7:
+f11 = o(f10) = 0 = 2*sqrt(f11) + 7 = o(2*sqrt(f10) + 7)
+lim f11/f10 = lim n*log(2, n)/(n*log(2, n)^2), as n->+inf = 0 = lim (2*sqrt(n*log(2, n))+7)/(2*sqrt((n*log(2, n)^2))+7), as n->+inf
+
+f7(n) ~ f6(n) = 1 = f7(n)^2 ~ f6(n)^2
+lim f7/f6 = lim (sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/n^2, as n->+inf = 1 = lim 2*(sqrt(sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))+7)/(2*sqrt(n^2)+7), as n->+inf
+
+exp:
+==============================
+f(n) = o(g(n)) = 2^f(n)^2 = o(2^g(n))
+f(n) ~ g(n) != 2^f(n) ~ 2^g(n)
+
+f11 = o(f10) = 0 = exp(f11) = o(exp(f10))
+lim f11/f10 = lim n*log(2, n)/(n*log(2, n)^2), as n->+inf = 0 = lim 2^(n*log(2, n))/2^(n*log(2, n)^2), as n->+inf
+
+f7(n) ~ f6(n) = 1 = f7(n)^2 ~ f6(n)^2
+lim f7/f6 = lim (sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/n^2, as n->+inf = 1 != 0 = lim 2^(sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/2^(n^2), as n->+inf
+
+^2:
+==============================
+f(n) = o(g(n)) = f(n)^2 = o(g(n)^2)
+f(n) ~ g(n) = f(n)^2 ~ g(n)^2
+
+f11 = o(f10) = 0 = f11^2 = o(f10^2)
+lim f13/f5 = lim log(2, n)/2^n, as n->+inf = 0 = lim log(2, n)^2/(2^n)^2, as n->+inf
+f11 = o(f10) = 0 = ln(f11) = o(ln(f10))
+lim f11/f10 = lim n*log(2, n)/(n*log(2, n)^2), as n->+inf = 0 = lim(n*log(2, n))^2/(n*log(2, n)^2)^2, as n->+inf
+
+f7(n) ~ f6(n) = 1 = f7(n)^2 ~ f6(n)^2
+lim f7/f6 = lim (sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/n^2, as n->+inf = 1 = lim (sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))^2/(n^2)^2, as n->+inf
+==============================
+ln:
+f(n) = o(g(n)) ln(f(n)) != o(ln(g(n)))
+f(n) ~ g(n) = ln(f(n)) ~ g(n)
+
+f5 = o(f13) = 0 != ln(f5) = o(ln(f13))
+lim f13/f5 = lim log(2, n)/2^n, as n->+inf = 0 = 0 lim log(log(2, n))/log(2^n), as n->+inf
+f11 = o(f10) = 0 != ln(f11) = o(ln(f10)) = 1
+lim f11/f10 = lim n*log(2, n)/(n*log(2, n)^2), as n->+inf = 0 != 1 = lim log(n*log(2, n))/log((n*log(2, n)^2)), as n->+inf
+
+f6 = o(f5) = ln(f6) = o(ln(f5)) = 0
+lim f6/f5 = lim n^2/2^n, as n-> +inf = 0 = lim log(n^2)/log(2^n), as n->+inf
+
+f7(n) ~ f6(n): 
+lim (sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/n^2, as n->+inf = 1 = lim log(sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/log(n^2), as n->+inf
+
+f(n) ~ g(n) -> ln(f(n)) ~ ln(g(n))
+Если f(x) \sim g(x), то \ln{f(x)} \sim \ln{g(x)}. Однако обратное, вообще говоря, неверно. Как пример можно привести f(n)=e^{n^2+n} и        g(n)=e^{n^2}.
+
+If f=o(g)  then f=O(g). 
+If f!=O(g) then g=O(f).
+If f=O(g), and g=Θ(h), then h=Ω(f).
+

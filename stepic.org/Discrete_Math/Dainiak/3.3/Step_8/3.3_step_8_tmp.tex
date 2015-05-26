@@ -1,0 +1,107 @@
+%% LyX 2.1.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[russian]{article}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1cm,bmargin=1cm,lmargin=1cm,rmargin=1cm}
+\usepackage{units}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\DeclareRobustCommand{\cyrtext}{%
+  \fontencoding{T2A}\selectfont\def\encodingdefault{T2A}}
+\DeclareRobustCommand{\textcyr}[1]{\leavevmode{\cyrtext #1}}
+\AtBeginDocument{\DeclareFontEncoding{T2A}{}{}}
+
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\title{Суммы, быстро растущие функции, и другие насущные вещи | Шаг 8 }
+
+\maketitle
+Найдите \textit{асимптотику} суммы $\sum_{k=1}^{n}\frac{k!}{2^{k}}$
+при $n\rightarrow\infty$. В тексте своего решения чётко указывайте,
+на какие куски Вы разбиваете сумму и как эти куски оцениваете. В Вашем
+окончательном ответе не должно быть ни факториалов, ни сумм с растущим
+количеством слагаемых.
+
+\rule[0.5ex]{0.27\columnwidth}{1pt}
+
+Комментарий от преподавателя:
+
+Ответ: $\sum\sim\frac{n!}{2^{n}}\sim\sqrt{2\cdot\pi}\cdot\sqrt{n}\cdot\left(2e\right)^{-n}\cdot n^{n}$,
+то есть последнее слагаемое определяет асимптотику суммы. Одно из
+возможных разбиений на слагаемые: $1\leqslant k\leqslant n-2$, $k=n-1$,
+$k=n$. В первом случае:
+\[
+\sum_{k=1}^{n}\frac{k!}{2^{k}}\leqslant n\cdot\frac{\left(n-1\right)!}{2^{n-2}}=\underline{O}\left(\frac{\left(n-1\right)!}{2^{n}}\right)=\bar{o}\left(\frac{n!}{2^{n}}\right)
+\]
+
+
+Во втором случае результат тоже равен $\underline{O}\left(\frac{\left(n-1\right)!}{2^{n}}\right)$.
+
+\rule[0.5ex]{0.97\columnwidth}{1pt}
+
+Тут вся сумма эквивалентна последнему слагаемому $n!/\left(2^{n}\right)$.
+Начиная с какого-то момента, каждое следующее больше предыдущего хотя
+бы в два раза, сумма слагаемых до этого момента - константа. Сумму
+кроме последнего можно оценить суммой бесконечной геом. прогрессии
+с начальным членом $\frac{\left(n-1\right)!}{2^{n-1}}$ и знаменателем
+$\nicefrac{1}{2}$, плюс константа, что равно $\underline{O}\left(\frac{\left(n-1\right)!}{2^{n-1}}\right)$,
+а значит $\bar{o}\left(\frac{n!}{2^{n}}\right)$. Теперь избавимся
+от факториала с помощью формулы Стирлинга
+\[
+\frac{n!}{2\cdot n}\sim\sqrt{2\cdot\pi\cdot n}\cdot\left(\frac{n}{2e}\right)^{n}
+\]
+
+
+\rule[0.5ex]{0.97\columnwidth}{1pt}
+
+В рассматриваемой сумме вынесем последнее слагаемое в виде множителя
+из суммы, тогда получим: 
+\[
+\sum_{k=1}^{n}\frac{k!}{2^{k}}=\frac{n!}{2^{n}}\cdot\sum_{k=1}^{n}\frac{2^{n-k}}{\nicefrac{n!}{k!}}
+\]
+
+
+Записывая получившуюся сумму начиная с последнего слагаемого и далее
+факторизуя, можно расписать в виде вложенных скобок: 
+\[
+\sum_{k=n}^{1}\frac{k!}{2^{k}}=1+\frac{2}{n}+\frac{4}{n\cdot\left(n-1\right)}+...+\frac{2^{n-1}}{n!}
+\]
+
+
+\[
+\sum_{k=n}^{1}\frac{k!}{2^{k}}=1+\frac{2}{n}+\frac{2\cdot2}{n\cdot\left(n-1\right)}+...+\frac{2^{n-1}}{n!}=1+\frac{2}{n}\cdot\left(1+\frac{2}{n-1}\cdot\left(1+...\right)\right)
+\]
+
+
+Обозначая эту сумму через $S_{n}$, из вложенных скобок видно, что
+эта сумма удовлетворяет рекурсии: $S_{n}=1+\frac{2}{n}\cdot S_{n-1}$.
+
+Рассматривая это равенство при $n\rightarrow\infty$, получим: $S_{n}=1+\bar{o}\left(S_{n}\right)$,
+это означает, что асимптотически $S_{n}\sim1$.
+
+Значит искомая сумма имеет асимптотику 
+\[
+\sum_{k=1}^{n}\frac{k!}{2^{k}}=\frac{n!}{2^{n}}\cdot\sum_{k=1}^{n}\frac{2^{n-k}}{\nicefrac{n!}{k!}}=\frac{n!}{2^{n}}\cdot S_{n}\sim\frac{n!}{2^{n}}\sim\sqrt{2\cdot\pi\cdot n}\cdot\left(\frac{n}{2e}\right)^{n}
+\]
+
+
+Последняя эквивалентность записана на основе формулы Стирлинга, так
+как в условии просили обойтись без факториалов. Для подтверждения
+можно построить график с первым и вторым (добавлен множитель $\left(1+\nicefrac{2}{n}\right)$)
+приближениями.
+
+\includegraphics{3\lyxdot 3_step_8}
+\end{document}

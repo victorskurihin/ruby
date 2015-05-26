@@ -1,0 +1,45 @@
+f31(n) = log(2, n)
+f30(n) = sqrt(n)
+f9(n) = n*log(2, n)
+f8(n) = n*log(2, n)^2
+f7(n) = (sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2))) # ~ C(k,n)
+f6(n) = n^2
+f5(n) = 2^n
+f4(n) = e^(n^2+n)
+f3(n) = e^(n^2)
+f2(n) = (sqrt(2*pi*n)(n/e)^n
+f1(n) = 2^(2^n)
+
+lim f7/f6 = lim (sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/n^2, as n->+inf = 1 = lim log(sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/log(n^2), as n->+inf
+
+sqrt() + 7:
+f9 = o(f8) = 0 = sqrt(f9) + 7 = o(sqrt(f8) + 7)
+lim f9/f8 = lim n*log(2, n)/(n*log(2, n)^2), as n->+inf = 0 = lim (sqrt(n*log(2, n))+7)/(sqrt((n*log(2, n)^2))+7), as n->+inf
+
+exp:
+==============================
+f9 = o(f8) = 0 = exp(f9) = o(exp(f8))
+lim f9/f8 = lim n*log(2, n)/(n*log(2, n)^2), as n->+inf = 0 = lim 2^(n*log(2, n))/2^(n*log(2, n)^2), as n->+inf
+
+^2:
+==============================
+f9 = o(f8) = 0 = f9^2 = o(f8^2)
+lim f31/f5 = lim log(2, n)/2^n, as n->+inf = 0 = lim log(2, n)^2/(2^n)^2, as n->+inf
+f9 = o(f8) = 0 = ln(f9) = o(ln(f8))
+lim f9/f8 = lim n*log(2, n)/(n*log(2, n)^2), as n->+inf = 0 = lim(n*log(2, n))^2/(n*log(2, n)^2)^2, as n->+inf
+
+==============================
+ln:
+f = o(g) ln(f) != o(ln(g))
+
+f5 = o(f31) = 0 != ln(f5) = o(ln(f31))
+lim f31/f5 = lim log(2, n)/2^n, as n->+inf = 0 = 0 lim log(log(2, n))/log(2^n), as n->+inf
+f9 = o(f8) = 0 != ln(f9) = o(ln(f8)) = 1
+lim f9/f8 = lim n*log(2, n)/(n*log(2, n)^2), as n->+inf = 0 != 1 = lim log(n*log(2, n))/log((n*log(2, n)^2)), as n->+inf
+
+f6 = o(f5) = ln(f6) = o(ln(f5)) = 0
+lim f6/f5 = lim n^2/2^n, as n-> +inf = 0 = lim log(n^2)/log(2^n), as n->+inf
+
+f7(n) ~ f6(n): 
+lim (sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/n^2, as n->+inf = 1 = lim log(sqrt(2*pi*n)(n/e)^n/(sqrt(2*pi*(n-2))((n-2)/e)^(n-2)))/log(n^2), as n->+inf
+

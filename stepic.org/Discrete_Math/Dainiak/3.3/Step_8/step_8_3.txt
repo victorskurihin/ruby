@@ -1,0 +1,35 @@
+
+  set terminal png size 1024, 480
+  set output "step_8_3.png"
+  set style line 1 lt -1 lw 1
+  set style line 2 lt -1 lw 2
+  set style arrow 2 head filled size screen 0.015,15,20 ls 2
+  set arrow from 1,1 to 1,2.43e+0 as 2
+  set arrow from 1,1 to 20.03,1 as 2
+  #set ytics 1, 0.1
+  set xtics 1, 1
+  set y2range [0:2.41e+0]
+  set autoscale fix
+  set grid
+  plot 'step_8_3.txt' using 1:2                 title " " pt 5,        'step_8_3.txt' using 1:2 smooth csplines title " " with lines lt -1
+1.0 1.000000e+00
+1.0 1.084438e+00
+2.0 2.084414e+00
+3.0 2.398817e+00
+4.0 2.212185e+00
+5.0 1.897997e+00
+6.0 1.644889e+00
+7.0 1.481007e+00
+8.0 1.380168e+00
+9.0 1.315648e+00
+10.0 1.271252e+00
+11.0 1.238564e+00
+12.0 1.213264e+00
+13.0 1.192986e+00
+14.0 1.176318e+00
+15.0 1.162350e+00
+16.0 1.150465e+00
+17.0 1.140221e+00
+18.0 1.131297e+00
+19.0 1.123450e+00
+20.0 1.116495e+00
