@@ -1,0 +1,33 @@
+Phase one - Spaceship
+1. Modify the draw method for the Ship class to draw the ship image (without thrust flames) instead of a circle. This method should incorporate the ship's position and angle. Note that the angle should be in radians, not degrees. Since a call to the ship's draw method already exists in the draw handler, you should now see the ship image. Experiment with different positions and angles for the ship. OK
+
+2. Implement an initial version of the update method for the ship. This version should update the position of the ship based on its velocity. Since a call to the update method also already exists in the draw handler, the ship should move in response to different initial velocities. OK
+
+3. Modify the update method for the ship to increment its angle by its angular velocity. OK
+
+4. Make your ship turn in response to the left/right arrow keys. Add keydown and keyup handlers that check the left and right arrow keys. Add methods to the Ship class to increment and decrement the angular velocity by a fixed amount. (There is some flexibility in how you structure these methods.) Call these methods in the keyboard handlers appropriately and verify that you can turn your ship as you expect. OK
+
+5. Modify the keyboard handlers to turn the ship's thrusters on/off. Add a method to the Ship class to turn the thrusters on/off (you can make it take a Boolean argument which is True or False to decide if they should be on or off).
+
+6. Modify the ship's draw method to draw the thrust image when it is on. (The ship image is tiled and contains both images of the ship.) OK
+
+7. Modify the ship's thrust method to play the thrust sound when the thrust is on. Rewind the sound when the thrust turns off. OK
+
+8. Add code to the ship's update method to use the given helper function angle_to_vector to compute the forward vector pointing in the direction the ship is facing based on the ship's angle. OK
+
+9. Add code to the ship's update method to use the given helper function angle_to_vector to compute the forward vector pointing in the direction the ship is facing based on the ship's angle. OK
+
+10. Then, modify the ship's update method such that the ship's position wraps around the screen when it goes off the edge (use modular arithmetic!). OK
+
+11. Up to this point, your ship will never slow down. Finally, add friction to the ship's update method as shown in the "Acceleration and Friction" video by multiplying each component of the velocity by a number slightly less than 1 during each update. OK
+
+
+Phase two - Rocks
+
+1. Complete the Sprite class (as shown in the "Sprite class" video) by modifying the draw handler to draw the actual image and the update handler to make the sprite move and rotate.  Rocks do not accelerate or experience friction, so the sprite update method should be simpler than the ship update method.  Test this by giving a_rock different starting parameters and ensuring it behaves as you expect. OK
+
+2. Implement the timer handler rock_spawner. In particular, set a_rock to be a new rock on every tick. (Don't forget to declare a_rock as a global in the timer handler.) Choose a velocity, position, and angular velocity randomly for the rock. You will want to tweak the ranges of these random numbers, as that will affect how fun the game is to play. Make sure you generated rocks that spin in both directions and, likewise, move in all directions. OK
+
+
+Phase three - Missiles
+

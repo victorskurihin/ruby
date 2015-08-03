@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 ################################################################################
-# http://www.codeskulptor.org/#user40_MR40fGIFIH_3.py
+# http://www.codeskulptor.org/#user40_MR40fGIFIH_13.py
 # Spaceship.py
 ################################################################################
 
@@ -13,10 +13,16 @@ import time
 
 # my initialize globals
 debug = True
+debug_level = 1
 
 # globals for user interface
 WIDTH = 800
 HEIGHT = 600
+MISSILE_VEL = 5
+SHIP_VEL_DEV = 1.025
+SHIP_VEL_MUL = 0.75
+SHIP_VEL_LIM = 10
+sound_time = 0
 score = 0
 lives = 3
 time = 0
@@ -46,6 +52,7 @@ class ImageInfo:
 
     def get_animated(self):
         return self.animated
+
 #end class ImageInfo:
     
 # art assets created by Kim Lathrop, may be freely re-used in non-commercial projects, please credit Kim
@@ -91,6 +98,14 @@ def angle_to_vector(ang):
     return [math.cos(ang), math.sin(ang)]
 #end def angle_to_vector(ang):
 
+def vector_product(a, b):
+    return a[0]*b[0] + a[1]*b[1]
+#end def dist(p,q):
+
+def vector_lenght(v):
+    return dist(v, [0, 0])
+#def vector_lenght(v):
+
 def dist(p,q):
     return math.sqrt((p[0] - q[0]) ** 2+(p[1] - q[1]) ** 2)
 #end def dist(p,q):
@@ -98,63 +113,96 @@ def dist(p,q):
 # Ship class
 class Ship:
     def __init__(self, pos, vel, angle, image, info):
-        self.pos = [pos[0],pos[1]]
-        self.vel = [vel[0],vel[1]]
+        self.pos = [pos[0], pos[1]]
+        self.vel = [vel[0], vel[1]]
         self.thrust = False
+        self.play = False
         self.angle = angle
         self.angle_vel = 0
         self.image = image
         self.image_center = info.get_center()
+        self.image_center_x_no_thrust = self.image_center[0]
         self.image_size = info.get_size()
         self.radius = info.get_radius()
+        self.forward = []
     #end def __init__(self, pos, vel, angle, image, info):
         
     def draw(self,canvas):
-        pass
-        # canvas.draw_circle(self.pos, self.radius, 1, "White", "White")
         canvas.draw_image(self.image, self.image_center,
                           self.image_size, self.pos,  
                           self.image_size, self.angle)
-        # print self.image, self.pos, self.image_size, self.image_center, self.image_size
     #end def draw(self,canvas):
 
     def update(self):
-        vector = angle_to_vector(self.angle)
-        if self.thrust:
-            if debug:
-                print("Ship(%s).update(): vel[%d,%d]" % 
-                      (str(self), self.vel[0], self.vel[1]))
-            self.vel[0] += vector[0]
-            self.vel[1] += vector[1]
-            if debug:
-                print("Ship(%s).update(): vel[%d,%d]" % 
-                      (str(self), self.vel[0], self.vel[1]))
-        else:
-            if self.vel[0] > 0:
-                self.vel[0] -= 1
-            if self.vel[1] > 0:
-                self.vel[1] -= 1
-            # self.vel[1] += 1
-        #end if self.thrust:
-        self.pos[0] += int(self.vel[0]*0.1)
-        self.pos[1] += int(self.vel[1]*0.1)
-        if self.pos[0] > WIDTH:
-            self.pos[0] = 0
-        elif self.pos[0] < 0:
-            self.pos[0] = WIDTH
-        if self.pos[1] > HEIGHT:
-            self.pos[1] = 0
-        elif self.pos[1] < 0:
-            self.pos[1] = HEIGHT
-        if debug:
-            print("Ship(%s).update(): pos[%d,%d]" % 
-                  (str(self), self.pos[0], self.pos[1]))
         self.angle += self.angle_vel
+        self.forward = angle_to_vector(self.angle)
+        if debug and debug_level > 1:
+            print("Ship.update(): angle=%f" % 
+                  (self.angle))
+            print("Ship.update(): vector[%d,%d]" % 
+                  (self.forward[0], self.forward[1]))
+        if self.thrust:
+            if debug and debug_level > 1:
+                print("Ship(%s).update(): vel[%d,%d]" % 
+                      (str(self), self.vel[0], self.vel[1]))
+            if abs(self.vel[0]) < abs(SHIP_VEL_LIM*self.forward[0]):
+                self.vel[0] += (self.forward[0]*SHIP_VEL_MUL)
+            if abs(self.vel[1]) < abs(SHIP_VEL_LIM*self.forward[1]):
+                self.vel[1] += (self.forward[1]*SHIP_VEL_MUL)
+            if debug and debug_level > 1:
+                print("Ship(%s).update(): vel[%d,%d]" % 
+                      (str(self), self.vel[0], self.vel[1]))
+        else: # for if self.thrust:
+            self.vel[0] /= SHIP_VEL_DEV
+            self.vel[1] /= SHIP_VEL_DEV
+        #end if self.thrust:
+        self.pos[0] += int(self.vel[0])
+        self.pos[1] += int(self.vel[1])
+        self.pos[0] %= WIDTH
+        self.pos[1] %= HEIGHT
     #end def update(self):
+
+    def get_thrust(self, status = False):
+        return self.thrust
+    #end def get_thrust(self, status = False)
 
     def set_thrust(self, status = False):
         self.thrust = status
+        if status:
+            self.image_center[0] += (self.image_center_x_no_thrust*2)
+            if not self.play:
+                self.play = True
+                ship_thrust_sound.play()
+            #end if not self.play:
+        else: #for if status:
+            self.image_center[0] = self.image_center_x_no_thrust
+            if self.play:
+                ship_thrust_sound.pause()
+                self.play = False
+                ship_thrust_sound.rewind
+            #end if self.play:
+        #end else if status:
     #end def thrust(self):
+
+    def shoot(self, vel = 0):
+        global a_missile
+        v = angle_to_vector(self.angle)
+        # p = vector_product(self.vel, v) / vector_lenght(v)
+        vel = [self.vel[0] + 3*v[0], self.vel[1] + 3*v[1] ]
+        if debug:
+            print "v[%0.3e,%0.3e]" % (v[0], v[1])
+        # vel = [ int(1.5*abs(p)*v[0]) , int(1.5*abs(p)*v[1]) ]
+        if debug:
+            print "vel[%d,%d]" % (vel[0], vel[1])
+        pos = list(self.pos)
+        pos[0] += (v[0]*self.image_center_x_no_thrust)
+        pos[1] += (v[1]*self.image_center[1])
+        vector = angle_to_vector(self.angle)
+        vel_missile = [ vector[0]*MISSILE_VEL + self.vel[0], 
+                        vector[1]*MISSILE_VEL + self.vel[1] ]
+        a_missile = Sprite(pos, vel_missile, 0, 0, missile_image, 
+                           missile_info, missile_sound)
+    #end def set_thrust(self):
 
     def set_angle_vel(self, vel = 0):
         self.angle_vel = vel
@@ -184,11 +232,23 @@ class Sprite:
         canvas.draw_image(self.image, self.image_center,
                           self.image_size, self.pos,  
                           self.image_size, self.angle)
-        # canvas.draw_circle(self.pos, self.radius, 1, "Red", "Red")
     #end def draw(self, canvas):
     
+    def set_angle_vel(self, vel = 0):
+        self.angle_vel = vel
+    #end def set_thrust(self):
+
+    def set_vel(self, vel = [0, 0]):
+        self.vel = vel
+    #end def set_thrust(self):
+
     def update(self):
-        pass        
+        self.angle += self.angle_vel
+        self.pos[0] += int(self.vel[0])
+        self.pos[1] += int(self.vel[1])
+        self.pos[0] %= WIDTH
+        self.pos[1] %= HEIGHT
+    #end def update(self):
 #end class Sprite:
 
            
@@ -200,9 +260,13 @@ def draw(canvas):
     wtime = (time / 4) % WIDTH
     center = debris_info.get_center()
     size = debris_info.get_size()
-    canvas.draw_image(nebula_image, nebula_info.get_center(), nebula_info.get_size(), [WIDTH / 2, HEIGHT / 2], [WIDTH, HEIGHT])
-    canvas.draw_image(debris_image, center, size, (wtime - WIDTH / 2, HEIGHT / 2), (WIDTH, HEIGHT))
-    canvas.draw_image(debris_image, center, size, (wtime + WIDTH / 2, HEIGHT / 2), (WIDTH, HEIGHT))
+    canvas.draw_image(nebula_image, nebula_info.get_center(),
+                      nebula_info.get_size(), [WIDTH / 2, HEIGHT / 2],
+                      [WIDTH, HEIGHT])
+    canvas.draw_image(debris_image, center, size,
+                      (wtime - WIDTH / 2, HEIGHT / 2), (WIDTH, HEIGHT))
+    canvas.draw_image(debris_image, center, size,
+                      (wtime + WIDTH / 2, HEIGHT / 2), (WIDTH, HEIGHT))
 
     # draw ship and sprites
     my_ship.draw(canvas)
@@ -214,10 +278,31 @@ def draw(canvas):
     a_rock.update()
     a_missile.update()
 #end def draw(canvas):
-            
+
+RND1 = 10
+RND2 = 0.8
+RND3 = 0.005
+RND4 = 5.428
+RND5 = 0.7
+RND6 = 1.5
+RND7 = 0.4
+
 # timer handler that spawns a rock    
 def rock_spawner():
-    pass
+    global a_rock
+    a_rock = Sprite([random.randrange(WIDTH), random.randrange(HEIGHT)],
+                    [1, 1], 0, 0, asteroid_image, asteroid_info)
+    r = random.random()
+    a = ((r/RND1)*(r - RND2) + RND3)
+    a_rock.set_angle_vel(a)
+    r0 = random.random()
+    r1 = random.random()
+    v0 = ((r0*RND4)*(r0 - RND5) + (r1*RND6)*(r1 - RND7))*2
+    v1 = ((r1*RND4)*(r1 - RND5) + (r0*RND6)*(r0 - RND7))*2
+    if debug and debug_level > 1:
+        print "a: %0.4f, r: %0.4f, v0: %0.4f, r0: %0.4f, v1: %0.4f, r1: %0.4f\n" % \
+                (a, r, v0, r0, v1, r1)
+    a_rock.set_vel([v0,v1])
 #end def rock_spawner():
 
 def keydown(key):
@@ -228,9 +313,12 @@ def keydown(key):
         my_ship.set_thrust(True)
 
     if key == simplegui.KEY_MAP["left"]:
-        my_ship.set_angle_vel(-0.1)
+        my_ship.set_angle_vel(-0.15)
     elif key == simplegui.KEY_MAP["right"]:
-        my_ship.set_angle_vel(0.1)
+        my_ship.set_angle_vel(0.15)
+
+    if key == simplegui.KEY_MAP["space"]:
+        my_ship.shoot()
 #end def keydown(key)
 
 def keyup(key):
@@ -253,12 +341,21 @@ time_tick = 0
 def tick():
     global my_ship
     global time_tick
+    global sound_time
+    global my_ship
     time_tick = time_tick + 1
     if debug and 0 == time_tick % scale:
-        print "tick %03d: " % (int(time_tick/scale))
+        # print "tick %03d: " % (int(time_tick/scale))
+        pass
     if 0 == time_tick % scale:
         my_ship.update()
     #end if 0 == time_tick % 10:
+    if my_ship.get_thrust():
+        sound_time += 1
+        if sound_time > 500:
+            my_ship.set_thrust(False)
+            my_ship.set_thrust(True)
+            
 #end def tick()
 
 # initialize frame
@@ -274,7 +371,7 @@ frame.set_draw_handler(draw)
 frame.set_keydown_handler(keydown)
 frame.set_keyup_handler(keyup)
 
-tmrtk = simplegui.create_timer(25, tick)
+tmrtk = simplegui.create_timer(45, tick)
 timer = simplegui.create_timer(1000.0, rock_spawner)
 
 # get things rolling
@@ -282,6 +379,13 @@ tmrtk.start()
 timer.start()
 frame.start()
 
+################################################################################
+# TODO
+# http://www.codeskulptor.org/#user40_RrPOEFKCwLqSnEz.py Very Good!
+# http://www.codeskulptor.org/#user40_82DAN7LGrqlljbF.py Ok
+# http://www.codeskulptor.org/#user40_VXLJoI9HdkToAks.py Bad
+# http://www.codeskulptor.org/#user40_FydFZTw31q_13.py Good.
+# http://www.codeskulptor.org/#user40_d7i2uDalxN_8.py Ok Ok Angle!
 ################################################################################
 #EOF
 # vim: syntax=python:fileencoding=utf-8:fileformat=unix:tw=78:ts=4:sw=4:sts=4:et
