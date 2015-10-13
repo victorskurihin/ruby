@@ -3,8 +3,8 @@
 ################################################################################
 # $Date$
 # $Id$
-# $Version: 0.1$
-# $Revision: 8$
+# $Version: 0.2$
+# $Revision: 10$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 
@@ -13,6 +13,20 @@ class Integer
     (1..self).reduce(:*) || 1
   end
   alias factorial fact
+
+  # calculates binomial coefficient of self choose k
+  # not recommended for large numbers as binomial coefficients get large quickly... e.g. 100 choose 50 is 100891344545564193334812497256
+  def choose(k)
+    return 0 if (k > self)
+    n = self
+    r = 1
+    1.upto(k) do |d|
+      r *= n
+      r /= d
+      n -= 1
+    end
+    return r
+  end
 end
 
 class Float
@@ -29,6 +43,38 @@ class Float
 end
 # extremum 170.6.fact
 
+class Array
+  # when called without a block, returns an array with each combination.
+  # when called with a block, yields each combination to the block.
+  def each_choose(k, &block)
+    raise ArgumentError, "The combination size (#{k}) must be <= the array size (#{size}).", caller if k > size
+    raise ArgumentError, "The combination size (#{k}) cannot be negative.", caller if k < 0
+    if block == nil
+      results = []
+      size.choose(k).times { |i| results << choose_index(k, i) }
+      return results
+    end
+    size.choose(k).times { |i| yield choose_index(k, i) }
+  end
+
+  # returns the combination at index i of self.each_choose(k)
+  def choose_index(n, i)
+    results = []
+    size.times do |x|
+      break if n == 0
+      threshold = (size - x - 1).choose(n - 1)
+      if i < threshold
+        results << self[x]
+        n -= 1
+      else
+        i = i - threshold
+      end
+    end
+    return results
+  end
+end
+
+# (n)ₖ
 # убывающая факториальная степень P(k, n) = (n)k = n∙(n-1)∙...∙(n-k+1)
 # P(k, n) = A(k, n)
 def P(k, n)
@@ -57,11 +103,54 @@ def C(k, n)
 end
 alias binomial C
 
-# k-сочетаний c повторениями: CC(k, n) = C(k, n+k-1)
+# Computing Binomial Coefficients using Recursion
+# nCr = (n-1)*C(r) + (n-1)*C(r-1)
+def nCr(n, r)
+    return 1 if n == r
+    return n if r == 1
+    return 1 if n == 0
+    nCr(n-1,r) + nCr(n-1,r-1)
+end
+
+# def binomial(n, k):
+#     if k == 0:
+#         return 1
+#     elif 2*k > n:
+#         return binomial(n,n-k)
+#     else:
+#         e = n-k+1
+#         for i in range(2,k+1):
+#             e *= (n-k+i)
+#             e /= i
+#         return e
+def binomialpy(n, k)
+    if 0 == k
+        return 1
+    elsif 2 * k > n
+        return binomialpy(n, n - k)
+    else
+        e = n - k + 1
+        2.upto(k) { |i|
+            e *= (n - k + i)
+            e /= i
+        }
+        return e
+    end
+end
+
+def catalan(n)
+    return binomialpy(2*n, n)/(n + 1)
+end
+
+# k-сочетаний c повторениями: ((n K))
+# CC(k, n) = C(k, n+k-1)
+# CC(k, n) = P(k, n)/k.fact
+# CC(k ,n) = PK(n - 1 + k, k, n - 1)
 def CC(k ,n)
   C(k, n+k-1)
 end
 
+# кол-во упорядоченных k-разбиений n-элементного м-ва
 # сюрективное отображение n-элементного м-ва в k-элементное м-во
 def SS(n, k)
   r = 0
@@ -69,6 +158,16 @@ def SS(n, k)
     r = r + (-1)**(k-i)*C(i, k)*i**n
   }
   r
+end
+
+# кол-во неупорядоченных разбиений n-эл-ного множества на k непустых подмн-в.
+# числа Стирлинга второго рода
+def Stirling2(n, k)
+  r = 0
+  (0..(k)).each { |i|
+    r = r + (-1)**(k-i)*C(i, k)*i**n
+  }
+  r/k.fact
 end
 
 # полиномиальный коэффициет:
@@ -128,6 +227,14 @@ end
 # a mod m =b mod m.
 def mod_eql(a, b, m)
   (a % m) == (b % m)
+end
+
+def product_vector(a, b)
+  result = 0
+  a.each_index {|i| 
+    result += a[i] * b[i]
+  }
+  return result
 end
 
 __END__
