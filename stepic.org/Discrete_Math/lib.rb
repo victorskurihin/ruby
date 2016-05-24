@@ -4,7 +4,7 @@
 # $Date$
 # $Id$
 # $Version: 0.2$
-# $Revision: 11$
+# $Revision: 12$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 
@@ -159,10 +159,10 @@ end
 
 # (0...n).to_a.repeated_permutation(k){|c| p c}
 # k-сочетаний c повторениями: ((n k))
-# CC(k, n) = C(k, n+k-1)
+# CC(k, n) = C(k, n+k-1)??
 # CC(k, n) = P(k, n)/k.fact
 # CC(k ,n) = PK(n - 1 + k, k, n - 1)
-# CC(k, n) = ((n k)) = (-1) = (n+k-1)!/(k!∙(n-1)!)
+# CC(k, n) = ((n k)) = (-1)ᵏ∙binomialC(-n, k) = (n+k-1)!/(k!∙(n-1)!) OK
 def CC(k ,n)
   C(k, n+k-1)
 end
