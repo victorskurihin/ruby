@@ -4,7 +4,7 @@
 # $Date$
 # $Id$
 # $Version: 0.2$
-# $Revision: 12$
+# $Revision: 13$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 
@@ -15,7 +15,8 @@ class Integer
   alias factorial fact
 
   # calculates binomial coefficient of self choose k
-  # not recommended for large numbers as binomial coefficients get large quickly... e.g. 100 choose 50 is 100891344545564193334812497256
+  # not recommended for large numbers as binomial coefficients get large quickly...
+  # e.g. 100 choose 50 is 100891344545564193334812497256
   def choose(k)
     return 0 if (k > self)
     n = self
@@ -135,6 +136,7 @@ def binomialC(n, k)
     return 0 if n < k
     return binomialR(n, k)
 end
+alias binom binomialC
 def binomialR(n, k)
     if 0 == k
         return 1
