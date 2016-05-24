@@ -4,7 +4,7 @@
 # $Date$
 # $Id$
 # $Version: 0.2$
-# $Revision: 10$
+# $Revision: 11$
 # $Author: Victor |Stalker| Skurikhin <stalker@quake.ru>$
 ################################################################################
 
@@ -81,8 +81,7 @@ def P(k, n)
   b = n - k + 1
   (b..n).reduce(:*) || 1
 end
-
-# <=> n-размещений из k Ā(n, k) = Āⁿₖ = kⁿ
+# (0...n).to_a.permutation(k){|c| p c}
 # k-размещений с без повторений: A(k, n) = n!/(n-k)!
 def A(k, n)
   return 0 if k > n or k < 0
@@ -90,11 +89,15 @@ def A(k, n)
   n.fact/(n-k).fact
 end
 
+# (0...n).to_a.repeated_permutation(k){|c| p c}
 # k-размещений с повторениями: Ā(k, n) = n**k
+# <=> n-размещений из k Ā(n, k) = Āⁿₖ = kⁿ
 def AA(k, n)
   return n**k
 end
 
+# (0...n).to_a.combination(k){|c| p c}
+# Биномиальный коэффициент
 # k-сочетаний без повторений: C(k, n) = n!/((n-k)!∙k!)
 def C(k, n)
   return 0 if k > n or k < 0
@@ -102,6 +105,10 @@ def C(k, n)
   n.fact/((n-k).fact*k.fact)
 end
 alias binomial C
+
+def negatC(k, n)
+  return (-1)**k*C(k, n+k-1)
+end
 
 # Computing Binomial Coefficients using Recursion
 # nCr = (n-1)*C(r) + (n-1)*C(r-1)
@@ -123,11 +130,16 @@ end
 #             e *= (n-k+i)
 #             e /= i
 #         return e
-def binomialpy(n, k)
+def binomialC(n, k)
+    return (-1)**k*binomialR((-1)*n+k-1, k) if n < 0
+    return 0 if n < k
+    return binomialR(n, k)
+end
+def binomialR(n, k)
     if 0 == k
         return 1
     elsif 2 * k > n
-        return binomialpy(n, n - k)
+        return binomialR(n, n - k)
     else
         e = n - k + 1
         2.upto(k) { |i|
@@ -137,15 +149,20 @@ def binomialpy(n, k)
         return e
     end
 end
-
-def catalan(n)
-    return binomialpy(2*n, n)/(n + 1)
+def negatBinomialC(n, k)
+  return (-1)**k*binomialR((-1)*n+k-1, k)
 end
 
-# k-сочетаний c повторениями: ((n K))
+def catalan(n)
+    return binomialC(2*n, n)/(n + 1)
+end
+
+# (0...n).to_a.repeated_permutation(k){|c| p c}
+# k-сочетаний c повторениями: ((n k))
 # CC(k, n) = C(k, n+k-1)
 # CC(k, n) = P(k, n)/k.fact
 # CC(k ,n) = PK(n - 1 + k, k, n - 1)
+# CC(k, n) = ((n k)) = (-1) = (n+k-1)!/(k!∙(n-1)!)
 def CC(k ,n)
   C(k, n+k-1)
 end
